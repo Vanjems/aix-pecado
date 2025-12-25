@@ -2,6 +2,7 @@ import Image from "next/image";
 import LogoMarquee from "@/components/LogoMarquee";
 import TwoColumnSection from "@/components/TwoColumnSection";
 import ThirdPageSection from "@/components/ThirdPageSection";
+import FourthPageSection from "@/components/FourthPageSection";
 
 export default function Home() {
   return (
@@ -74,6 +75,7 @@ export default function Home() {
     <LogoMarquee />
     <TwoColumnSection />
     <ThirdPageSection />
+    <FourthPageSection />
     </>
   );
 }

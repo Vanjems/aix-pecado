@@ -26,7 +26,7 @@ export default function ThirdPageSection() {
           <div className="absolute inset-0 flex p-5">
             {/* First Column - Text */}
             <div className="flex-1 flex pl-25 items-center justify-center">
-              <div className="flex flex-col gap-3 text-left justify-center text-white">
+              <div className="flex flex-col gap-3 text-left justify-center text-white ">
                     <h3 className="text-[24px] font-quicksand font-bold">
                     For Financial Institutions
                     </h3>
@@ -88,7 +88,7 @@ export default function ThirdPageSection() {
                     </div>
                 </div>
                 {/* Second Paragraph */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 text-white/80">
                   <h3 className="text-[25px] font-quicksand font-bold">
                     Instant Access To Liquidity
                   </h3>
@@ -97,7 +97,7 @@ export default function ThirdPageSection() {
                   </p>
                 </div>
                 {/* Third Paragraph */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 text-white/80">
                   <h3 className="text-[25px] font-quicksand font-bold">
                     Efficient Enhancement of Intrinsic Value
                   </h3>
