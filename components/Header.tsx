@@ -38,7 +38,7 @@ export default function Header() {
         </Link>
         <Link
           href="/launch"
-          className="text-black text-base font-semibold bg-white rounded-[65%] py-3 px-7 hover:opacity-90 transition-opacity whitespace-nowrap"
+          className="text-black text-base font-semibold rounded-full bg-white py-3 px-7 hover:opacity-90 transition-opacity whitespace-nowrap"
         >
           Launch App
         </Link>

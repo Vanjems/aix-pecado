@@ -6,7 +6,7 @@ A modern Next.js application built with the latest technologies.
 
 This project strictly adheres to the following technology stack:
 
-- **Next.js 15** - React framework for production (App Router)
+- **Next.js 16** - React framework for production (App Router, Turbopack)
 - **React 19** - Latest React version
 - **TypeScript** - Type-safe JavaScript
 - **Tailwind CSS v4** - Utility-first CSS framework (CSS-first configuration)
