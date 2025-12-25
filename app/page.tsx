@@ -3,6 +3,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 import TwoColumnSection from "@/components/TwoColumnSection";
 import ThirdPageSection from "@/components/ThirdPageSection";
 import FourthPageSection from "@/components/FourthPageSection";
+import FifthPageSection from "@/components/FifthPageSection";
 
 export default function Home() {
   return (
@@ -76,6 +77,7 @@ export default function Home() {
     <TwoColumnSection />
     <ThirdPageSection />
     <FourthPageSection />
+    <FifthPageSection />
     </>
   );
 }
