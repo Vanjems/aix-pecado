@@ -4,6 +4,7 @@ import TwoColumnSection from "@/components/TwoColumnSection";
 import ThirdPageSection from "@/components/ThirdPageSection";
 import FourthPageSection from "@/components/FourthPageSection";
 import FifthPageSection from "@/components/FifthPageSection";
+import SixthPageSection from "@/components/SixthPageSection";
 
 export default function Home() {
   return (
@@ -78,6 +79,7 @@ export default function Home() {
     <ThirdPageSection />
     <FourthPageSection />
     <FifthPageSection />
+    <SixthPageSection />
     </>
   );
 }
