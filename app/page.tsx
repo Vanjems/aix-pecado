@@ -1,5 +1,7 @@
 import Image from "next/image";
 import LogoMarquee from "@/components/LogoMarquee";
+import TwoColumnSection from "@/components/TwoColumnSection";
+import ThirdPageSection from "@/components/ThirdPageSection";
 
 export default function Home() {
   return (
@@ -70,6 +72,8 @@ export default function Home() {
       </div>
     </main>
     <LogoMarquee />
+    <TwoColumnSection />
+    <ThirdPageSection />
     </>
   );
 }
