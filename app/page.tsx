@@ -7,6 +7,7 @@ import FifthPageSection from "@/components/FifthPageSection";
 import SixthPageSection from "@/components/SixthPageSection";
 import SeventhPageSection from "@/components/SeventhPageSection";
 import EighthPageSection from "@/components/EighthPageSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -84,6 +85,7 @@ export default function Home() {
     <SixthPageSection />
     <SeventhPageSection />
     <EighthPageSection />
+    <Footer />
     </>
   );
 }
