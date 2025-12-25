@@ -6,6 +6,7 @@ import FourthPageSection from "@/components/FourthPageSection";
 import FifthPageSection from "@/components/FifthPageSection";
 import SixthPageSection from "@/components/SixthPageSection";
 import SeventhPageSection from "@/components/SeventhPageSection";
+import EighthPageSection from "@/components/EighthPageSection";
 
 export default function Home() {
   return (
@@ -82,6 +83,7 @@ export default function Home() {
     <FifthPageSection />
     <SixthPageSection />
     <SeventhPageSection />
+    <EighthPageSection />
     </>
   );
 }
