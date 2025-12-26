@@ -4,15 +4,15 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full h-[425px] bg-[#000000] relative overflow-hidden">
+    <footer className="w-full min-h-[600px] md:min-h-[500px] lg:h-[425px] bg-[#000000] relative overflow-hidden">
       {/* Film grain texture overlay */}
       <div className="film-grain-overlay" />
       
       {/* Content */}
-      <div className="relative z-10 flex flex-col h-full">
-        <div className="flex flex-row gap-8 h-full px-8 py-8">
+      <div className="relative z-10 flex flex-col min-h-[600px] md:min-h-[500px] lg:h-full">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-8 h-full px-4 md:px-6 lg:px-8 py-6 md:py-7 lg:py-8">
           {/* First Column */}
-          <div className="flex flex-col flex-1 justify-center gap-2 pl-10">
+          <div className="flex flex-col flex-1 justify-center gap-2 pl-0 md:pl-4 lg:pl-10">
             {/* Logo */}
             <div className="flex">
               <Image
@@ -20,7 +20,7 @@ export default function Footer() {
                 alt="Logo"
                 width={200}
                 height={60}
-                className="h-auto"
+                className="h-auto w-[150px] md:w-[175px] lg:w-[200px]"
               />
             </div>
             
@@ -42,28 +42,28 @@ export default function Footer() {
                 alt="Facebook"
                 width={50}
                 height={50}
-                className="object-contain"
+                className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
               />
               <Image
                 src="/images/sixth-page/icons-twitter.svg"
                 alt="Twitter/X"
                 width={50}
                 height={50}
-                className="object-contain"
+                className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
               />
               <Image
                 src="/images/sixth-page/icons-instagram.svg"
                 alt="Instagram"
                 width={50}
                 height={50}
-                className="object-contain"
+                className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
               />
               <Image
                 src="/images/sixth-page/icons-linkedin.svg"
                 alt="LinkedIn"
                 width={50}
                 height={50}
-                className="object-contain"
+                className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
               />
             </div>
             
@@ -77,10 +77,10 @@ export default function Footer() {
           </div>
           
           {/* Second Column */}
-          <div className="flex flex-col flex-1 items-center justify-center">
-            <div className="flex flex-row gap-25">
+          <div className="flex flex-col flex-1 items-center lg:items-center justify-center">
+            <div className="flex flex-row gap-4 md:gap-6 lg:gap-25">
               {/* First Sub-column: IMPORTANT */}
-              <div className="flex flex-col gap-7">
+              <div className="flex flex-col gap-4 md:gap-5 lg:gap-7">
                 <p className="font-quicksand text-[14px] font-bold text-white">
                   IMPORTANT
                 </p>
@@ -90,7 +90,7 @@ export default function Footer() {
               </div>
               
               {/* Second Sub-column: COMPANY */}
-              <div className="flex flex-col gap-7">
+              <div className="flex flex-col gap-4 md:gap-5 lg:gap-7">
                 <p className="font-quicksand text-[14px] font-bold text-white">
                   COMPANY
                 </p>
@@ -100,7 +100,7 @@ export default function Footer() {
               </div>
               
               {/* Third Sub-column: SITEMAP */}
-              <div className="flex flex-col gap-7">
+              <div className="flex flex-col gap-4 md:gap-5 lg:gap-7">
                 <p className="font-quicksand text-[14px] font-bold text-white">
                   SITEMAP
                 </p>

@@ -23,35 +23,28 @@ export default function SecondPageSection() {
   );
 
   return (
-    <div id="second-page" className="w-full h-[1024px] relative flex">
+    <div id="second-page" className="w-full min-h-[600px] md:min-h-[800px] lg:h-[1024px] relative flex flex-col lg:flex-row">
       {/* First Column - Image background */}
-      <div className="w-1/2 h-full bg-white relative overflow-hidden">
+      <div className="w-full lg:w-1/2 h-[400px] md:h-[500px] lg:h-full bg-white relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center z-0">
           <Image
             src="/images/second-page-image.svg"
             alt="Second Page Image"
             width={1920}
             height={1024}
-            className="object-contain"
-            style={{
-              maxWidth: '100%',
-              maxHeight: '100%',
-            }}
+            className="object-contain max-w-full max-h-full"
           />
         </div>
       </div>
 
       {/* Second Column - Content */}
-      <div 
-        className="w-1/2 h-full flex flex-col items-center justify-center px-8 relative z-10"
-        style={{ backgroundColor: '#FDFBF9' }}
-      >
-        <div className="flex flex-col items-center gap-5 max-w-lg">
+      <div className="w-full lg:w-1/2 h-auto lg:h-full flex flex-col items-center justify-center px-4 md:px-6 lg:px-8 py-8 md:py-10 lg:py-0 relative z-10 bg-[#FDFBF9]">
+        <div className="flex flex-col items-center gap-3 md:gap-4 lg:gap-5 max-w-lg w-full">
           {/* First Row */}
-          <div className="flex items-center justify-center gap-4 w-full">
+          <div className="flex items-center justify-center gap-2 md:gap-3 lg:gap-4 w-full">
             <button
               onClick={() => setSelectedButton('pathway')}
-              className={`text-[24px] font-quicksand text-black text-right flex-1 cursor-pointer transition-all ${
+              className={`text-[16px] md:text-[20px] lg:text-[24px] font-quicksand text-black text-right flex-1 cursor-pointer transition-all ${
                 selectedButton === 'pathway' ? 'font-bold' : 'font-normal'
               }`}
             >
@@ -63,12 +56,12 @@ export default function SecondPageSection() {
                 alt="Divider"
                 width={1}
                 height={35}
-                className="object-contain"
+                className="object-contain h-[25px] md:h-[30px] lg:h-[35px]"
               />
             </div>
             <button
               onClick={() => setSelectedButton('legacy')}
-              className={`text-[24px] font-quicksand text-black text-left flex-1 cursor-pointer transition-all whitespace-nowrap ${
+              className={`text-[16px] md:text-[20px] lg:text-[24px] font-quicksand text-black text-left flex-1 cursor-pointer transition-all whitespace-nowrap ${
                 selectedButton === 'legacy' ? 'font-bold' : 'font-normal'
               }`}
             >
@@ -77,19 +70,9 @@ export default function SecondPageSection() {
           </div>
 
           {/* Second Row - Box with paragraph */}
-          <div style={{ marginTop: '20px', minHeight: '200px', width: '100%' }}>
-            <div
-              className="px-2 py-4"
-              style={{
-                borderRadius: '30px',
-                backgroundColor: '#FDFBF9',
-                border: '1px solid black',
-                minHeight: '200px',
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
-              <p className="font-quicksand font-normal text-black text-justify">
+          <div className="mt-4 md:mt-5 lg:mt-5 min-h-[200px] w-full">
+            <div className="px-4 py-3 md:px-6 md:py-4 lg:px-2 lg:py-4 rounded-[30px] bg-[#FDFBF9] border border-black min-h-[200px] flex items-center">
+              <p className="font-quicksand font-normal text-black text-justify text-sm md:text-base">
                 {selectedButton === 'pathway' ? pathwayContent : legacyContent}
               </p>
             </div>

@@ -16,21 +16,21 @@ export default function LogoMarquee() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div className="w-full h-[112px] bg-[#000000] overflow-hidden relative">
+    <div className="w-full h-[80px] md:h-[96px] lg:h-[112px] bg-[#000000] overflow-hidden relative">
       {/* Film grain texture overlay */}
       <div className="film-grain-overlay" />
       <div className="relative z-10 flex items-center h-full animate-marquee whitespace-nowrap">
         {duplicatedLogos.map((logo, index) => (
           <div
             key={index}
-            className="inline-flex items-center justify-center mx-8 h-full flex-shrink-0"
+            className="inline-flex items-center justify-center mx-4 md:mx-6 lg:mx-8 h-full flex-shrink-0"
           >
             <Image
               src={logo.src}
               alt={logo.alt}
               width={120}
               height={60}
-              className="h-auto max-h-[60px] w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+              className="h-auto max-h-[40px] md:max-h-[50px] lg:max-h-[60px] w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
         ))}
