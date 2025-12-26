@@ -129,7 +129,7 @@ export default function SeventhPageSection() {
                 placeholder="What is your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="rounded-lg bg-white/10 text-white placeholder-white placeholder-opacity-50 px-4 py-3 font-quicksand outline-none border-none w-full max-w-[615px] h-[65px] md:h-[75px] lg:h-[85px] text-[16px] md:text-[18px] lg:text-[20px]"
+                className="rounded-lg bg-white/10 text-white placeholder-white placeholder-opacity-50 px-4 py-3 font-quicksand outline-none border-none w-full lg:w-[615px] h-[65px] md:h-[75px] lg:h-[85px] text-[16px] md:text-[18px] lg:text-[20px]"
               />
             </div>
 
@@ -148,7 +148,7 @@ export default function SeventhPageSection() {
                 placeholder="Please enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="rounded-lg bg-white/10 text-white placeholder-white placeholder-opacity-50 px-4 py-3 font-quicksand outline-none border-none w-full max-w-[615px] h-[65px] md:h-[75px] lg:h-[85px] text-[16px] md:text-[18px] lg:text-[20px]"
+                className="rounded-lg bg-white/10 text-white placeholder-white placeholder-opacity-50 px-4 py-3 font-quicksand outline-none border-none w-full lg:w-[615px] h-[65px] md:h-[75px] lg:h-[85px] text-[16px] md:text-[18px] lg:text-[20px]"
               />
             </div>
 
@@ -166,7 +166,7 @@ export default function SeventhPageSection() {
                 placeholder="Please enter your message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="rounded-lg bg-white/10 text-white placeholder-white placeholder-opacity-50 px-4 py-3 font-quicksand outline-none border-none w-full max-w-[615px] h-[250px] md:h-[300px] lg:h-[335px] text-[16px] md:text-[18px] lg:text-[20px] resize-none"
+                className="rounded-lg bg-white/10 text-white placeholder-white placeholder-opacity-50 px-4 py-3 font-quicksand outline-none border-none w-full lg:w-[615px] h-[250px] md:h-[300px] lg:h-[335px] text-[16px] md:text-[18px] lg:text-[20px] resize-none"
               />
             </div>
 
