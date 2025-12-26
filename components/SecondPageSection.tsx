@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function TwoColumnSection() {
+export default function SecondPageSection() {
   const [selectedButton, setSelectedButton] = useState<'pathway' | 'legacy'>('legacy');
 
   const pathwayContent = (
@@ -23,7 +23,7 @@ export default function TwoColumnSection() {
   );
 
   return (
-    <div className="w-full h-[1024px] relative flex">
+    <div id="second-page" className="w-full h-[1024px] relative flex">
       {/* First Column - Image background */}
       <div className="w-1/2 h-full bg-white relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center z-0">

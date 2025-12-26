@@ -16,8 +16,10 @@ export default function LogoMarquee() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <div className="w-full h-[112px] bg-noisy-dark overflow-hidden relative">
-      <div className="flex items-center h-full animate-marquee whitespace-nowrap">
+    <div className="w-full h-[112px] bg-[#000000] overflow-hidden relative">
+      {/* Film grain texture overlay */}
+      <div className="film-grain-overlay" />
+      <div className="relative z-10 flex items-center h-full animate-marquee whitespace-nowrap">
         {duplicatedLogos.map((logo, index) => (
           <div
             key={index}

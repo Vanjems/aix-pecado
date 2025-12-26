@@ -1,6 +1,6 @@
 import Image from "next/image";
 import LogoMarquee from "@/components/LogoMarquee";
-import TwoColumnSection from "@/components/TwoColumnSection";
+import SecondPageSection from "@/components/SecondPageSection";
 import ThirdPageSection from "@/components/ThirdPageSection";
 import FourthPageSection from "@/components/FourthPageSection";
 import FifthPageSection from "@/components/FifthPageSection";
@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-    <main className="relative w-full min-h-screen flex justify-center overflow-hidden pt-25">
+    <main id="hero" className="relative w-full min-h-screen flex justify-center overflow-hidden pt-25">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -45,7 +45,7 @@ export default function Home() {
         <div className="flex gap-4">
           {/* Launch App Button */}
           <button
-            className="px-8 py-3 rounded-full font-bold text-black font-quicksand transition-opacity hover:opacity-90"
+            className="px-8 py-3 rounded-full font-bold text-black font-quicksand transition-opacity hover:opacity-90 cursor-pointer"
             style={{ backgroundColor: '#E0E0E0' }}
           >
             Launch App
@@ -53,7 +53,7 @@ export default function Home() {
 
           {/* Learn More Button */}
           <button
-            className="px-8 py-3 rounded-full font-bold text-white font-quicksand transition-opacity hover:opacity-90"
+            className="px-8 py-3 rounded-full font-bold text-white font-quicksand transition-opacity hover:opacity-90 cursor-pointer"
             style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
           >
             Learn More
@@ -78,7 +78,7 @@ export default function Home() {
       </div>
     </main>
     <LogoMarquee />
-    <TwoColumnSection />
+    <SecondPageSection />
     <ThirdPageSection />
     <FourthPageSection />
     <FifthPageSection />

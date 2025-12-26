@@ -8,16 +8,9 @@ export default function SeventhPageSection() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   return (
-    <div className="w-full h-[1024px] bg-[#000000] relative overflow-hidden">
+    <div id="seventh-page" className="w-full h-[1024px] bg-[#000000] relative overflow-hidden">
       {/* Film grain texture overlay */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20"
-        style={{
-          backgroundImage: 'url(/images/film-grain.jpg)',
-          backgroundRepeat: 'repeat',
-          backgroundSize: 'auto',
-        }}
-      />
+      <div className="film-grain-overlay" />
       
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center pt-15 h-full">
@@ -197,7 +190,7 @@ export default function SeventhPageSection() {
 
             {/* Send Message Button */}
             <button
-              className="rounded-full bg-white text-black font-quicksand font-bold text-[20px] mt-4 flex items-center justify-center"
+              className="rounded-full bg-white text-black font-quicksand font-bold text-[20px] mt-4 flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer"
               style={{
                 width: '227px',
                 height: '65px',

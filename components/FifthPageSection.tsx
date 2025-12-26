@@ -6,20 +6,13 @@ export default function FifthPageSection() {
   return (
     <div className="w-full h-[1024px] bg-[#000000] relative overflow-hidden">
       {/* Film grain texture overlay */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20"
-        style={{
-          backgroundImage: 'url(/images/film-grain.jpg)',
-          backgroundRepeat: 'repeat',
-          backgroundSize: 'auto',
-        }}
-      />
+      <div className="film-grain-overlay" />
       
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center h-full">
         {/* Text Section with margin top 20 */}
         <div className="mt-10 flex flex-col items-center text-center mb-20 gap-0">
-          <h2 className="text-[40px] font-quicksand font-normal text-white leading-none m-0">
+          <h2 className="text-[40px] font-quicksand font-normal text-white leading-none m-0 mt-10">
             Digitized Proprietary Investments Offerings
           </h2>
           <p className="text-[20px] font-quicksand font-normal text-white leading-none m-0">
@@ -38,7 +31,7 @@ export default function FifthPageSection() {
               height={347}
               className="object-contain"
             />
-            <button className="mt-40 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center">
+            <button className="mt-40 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center hover:opacity-90 transition-opacity cursor-pointer">
               PECAT.D
             </button>
           </div>
@@ -52,7 +45,7 @@ export default function FifthPageSection() {
               height={347}
               className="object-contain"
             />
-            <button className="mt-40 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center">
+            <button className="mt-40 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center hover:opacity-90 transition-opacity cursor-pointer">
               RLINK.D
             </button>
           </div>

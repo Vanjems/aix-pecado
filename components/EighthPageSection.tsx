@@ -13,6 +13,8 @@ export default function EighthPageSection() {
           fill
           className="object-cover"
         />
+        {/* Dark overlay to dim the background image */}
+        <div className="absolute inset-0 bg-black opacity-60 pointer-events-none" />
       </div>
       
       {/* Content */}

@@ -6,20 +6,13 @@ export default function FourthPageSection() {
   return (
     <div className="w-full h-[1024px] bg-[#000000] relative overflow-hidden">
       {/* Film grain texture overlay */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20"
-        style={{
-          backgroundImage: 'url(/images/film-grain.jpg)',
-          backgroundRepeat: 'repeat',
-          backgroundSize: 'auto',
-        }}
-      />
+      <div className="film-grain-overlay" />
       
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
         {/* Text Section with margin 15 */}
         <div className="mt-15 flex flex-col items-center text-center gap-0">
-          <h2 className="text-[40px] font-quicksand font-normal text-white leading-none m-0">
+          <h2 className="text-[40px] font-quicksand font-normal text-white leading-none m-0 mt-10">
             Digitized Alternative Investments Offerings
           </h2>
           <p className="text-[20px] font-quicksand font-normal text-white leading-none m-0">
@@ -48,7 +41,7 @@ export default function FourthPageSection() {
                 height={347}
                 className="object-contain"
               />
-              <button className="mt-20 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center">
+              <button className="mt-20 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center hover:opacity-90 transition-opacity cursor-pointer">
                 EMRL.D
               </button>
             </div>
@@ -62,7 +55,7 @@ export default function FourthPageSection() {
                 height={347}
                 className="object-contain"
               />
-              <button className="mt-20 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none">
+              <button className="mt-20 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none hover:opacity-90 transition-opacity cursor-pointer">
                 <span className="leading-none">RUBY.D</span>
                 <span className="text-[15px] font-quicksand font-bold text-black leading-none">coming soon!</span>
               </button>
@@ -77,7 +70,7 @@ export default function FourthPageSection() {
                 height={347}
                 className="object-contain"
               />
-              <button className="mt-20 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none">
+              <button className="mt-20 px-6 rounded-full bg-white font-quicksand text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none hover:opacity-90 transition-opacity cursor-pointer">
                 <span className="leading-none">SFYR.D</span>
                 <span className="text-[15px] font-quicksand font-bold text-black leading-none">coming soon!</span>
               </button>

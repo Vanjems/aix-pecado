@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ThirdPageSection() {
   return (
-    <div className="w-full h-[1350px] bg-[#FDFBF9] flex flex-col items-center justify-center relative">
+    <div id="third-page" className="w-full h-[1350px] bg-[#FDFBF9] flex flex-col items-center justify-center relative">
       <div className="flex flex-col items-center gap-8">
         {/* Title Box */}
         <div className="flex items-center justify-center px-8 py-4 mt-[30px] bg-black/50">
@@ -26,7 +26,7 @@ export default function ThirdPageSection() {
           <div className="absolute inset-0 flex p-5">
             {/* First Column - Text */}
             <div className="flex-1 flex pl-25 items-center justify-center">
-              <div className="flex flex-col gap-3 text-left justify-center text-white ">
+              <div className="flex flex-col gap-3 text-left justify-center text-white opacity-80">
                     <h3 className="text-[24px] font-quicksand font-bold">
                     For Financial Institutions
                     </h3>

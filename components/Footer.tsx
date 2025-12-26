@@ -6,14 +6,7 @@ export default function Footer() {
   return (
     <footer className="w-full h-[425px] bg-[#000000] relative overflow-hidden">
       {/* Film grain texture overlay */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20"
-        style={{
-          backgroundImage: 'url(/images/film-grain.jpg)',
-          backgroundRepeat: 'repeat',
-          backgroundSize: 'auto',
-        }}
-      />
+      <div className="film-grain-overlay" />
       
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
@@ -35,7 +28,7 @@ export default function Footer() {
             <div className="h-2" />
             
             {/* Description Text */}
-            <p className="font-quicksand font-medium text-[12px] text-white">
+            <p className="font-quicksand font-medium text-[12px] text-white opacity-80">
               AI.X is an innovative venture founded by a team of dynamic entrepreneurs, each contributing deep expertise and a shared commitment to redefining the future of investment. At its core, AI.X embodies a collective vision: to revolutionize asset participation through the next era of Web 3.0 by leveraging the transformative capabilities of blockchain technology. Our mission is to deliver a more accessible, transparent, and operationally efficient investment ecosystem—empowering sophisticated investors and institutions to unlock new opportunities with confidence.
             </p>
             
@@ -78,7 +71,7 @@ export default function Footer() {
             <div className="h-4" />
             
             {/* Copyright Text */}
-            <p className="font-quicksand font-medium text-[12px] text-white">
+            <p className="font-quicksand font-medium text-[12px] text-white opacity-80">
               ©2024 AI.X Pecado. All Rights Reserved.
             </p>
           </div>
@@ -91,9 +84,9 @@ export default function Footer() {
                 <p className="font-quicksand text-[14px] font-bold text-white">
                   IMPORTANT
                 </p>
-                <p className="font-quicksand text-[14px] text-white">Privacy Policy</p>
-                <p className="font-quicksand text-[14px] text-white">Terms of Use</p>
-                <p className="font-quicksand text-[14px] text-white">Cookie Policy</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">Privacy Policy</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">Terms of Use</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">Cookie Policy</p>
               </div>
               
               {/* Second Sub-column: COMPANY */}
@@ -101,9 +94,9 @@ export default function Footer() {
                 <p className="font-quicksand text-[14px] font-bold text-white">
                   COMPANY
                 </p>
-                <p className="font-quicksand text-[14px] text-white">Ecosystem</p>
-                <p className="font-quicksand text-[14px] text-white">Whitepaper</p>
-                <p className="font-quicksand text-[14px] text-white">Tokenomics</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">Ecosystem</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">Whitepaper</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">Tokenomics</p>
               </div>
               
               {/* Third Sub-column: SITEMAP */}
@@ -111,10 +104,10 @@ export default function Footer() {
                 <p className="font-quicksand text-[14px] font-bold text-white">
                   SITEMAP
                 </p>
-                <p className="font-quicksand text-[14px] text-white">About us</p>
-                <p className="font-quicksand text-[14px] text-white">Latest news</p>
-                <p className="font-quicksand text-[14px] text-white">FAQs</p>
-                <p className="font-quicksand text-[14px] text-white">Contact us</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">About us</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">Latest news</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">FAQs</p>
+                <p className="font-quicksand text-[14px] text-white opacity-80">Contact us</p>
               </div>
             </div>
           </div>
