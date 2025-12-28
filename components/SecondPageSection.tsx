@@ -23,16 +23,16 @@ export default function SecondPageSection() {
   );
 
   return (
-    <div id="second-page" className="w-full min-h-[600px] md:min-h-[800px] lg:h-[1024px] relative flex flex-col lg:flex-row">
+    <div id="second-page" className="w-full min-h-150 md:min-h-200 lg:h-256 relative flex flex-col lg:flex-row">
       {/* First Column - Image background */}
-      <div className="w-full lg:w-1/2 h-[400px] md:h-[500px] lg:h-full bg-white relative overflow-hidden">
+      <div className="w-full lg:w-1/2 h-100 md:h-125 lg:h-full bg-white relative overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center z-0">
-          <Image
-            src="/images/second-page-image.svg"
-            alt="Second Page Image"
-            width={1920}
-            height={1024}
-            className="object-contain max-w-full max-h-full"
+          <video
+            src="/videos/the-model.mp4"
+            autoPlay
+            loop
+            muted
+            className="object-contain max-w-1500 max-h-840"
           />
         </div>
       </div>
