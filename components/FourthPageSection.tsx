@@ -1,13 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 export default function FourthPageSection() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="w-full min-h-[600px] md:min-h-[800px] lg:h-[1024px] bg-[#000000] relative overflow-hidden">
       {/* Film grain texture overlay */}
       <div className="film-grain-overlay" />
-      
+
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center py-8 md:py-10 lg:py-0">
         {/* Text Section */}
@@ -33,18 +36,34 @@ export default function FourthPageSection() {
                 className="object-cover w-full h-full opacity-30"
               />
             </div>
-            
+
             {/* Three Gemstone Images with Buttons - Absolutely positioned on top */}
             <div className="absolute inset-0 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8 pt-8 md:pt-12 lg:pt-40 pb-8 md:pb-12 lg:pb-0">
-              {/* Emerald Image */}
-              <div className="flex flex-col items-center">
-                <Image
-                  src="/images/fourth-page/emerald-image.svg"
-                  alt="Emerald"
-                  width={356}
-                  height={347}
-                  className="object-contain w-full max-w-62.5 md:max-w-75 lg:w-89 h-auto"
-                />
+              {/* Emerald Video */}
+              <div
+                className="flex flex-col items-center"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <div className="w-[356px] h-[347px] rounded-lg border border-white overflow-hidden relative">
+                  {isHovered ? (
+                    <video
+                      src="/videos/fourth-page/emerald.mp4"
+                      autoPlay
+                      muted
+                      playsInline
+                      className="absolute top-0 w-full h-full object-contain"
+                    />
+                  ) : (
+                    <Image
+                      src="/images/fourth-page/emerald-image.svg"
+                      alt="Emerald"
+                      width={356}
+                      height={347}
+                      className="object-contain w-full h-full"
+                    />
+                  )}
+                </div>
                 <a
                   href="https://aix-emrld-landingpage.vercel.app/"
                   className="mt-4 md:mt-12 lg:mt-20 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center hover:opacity-90 transition-opacity cursor-pointer"
@@ -64,7 +83,9 @@ export default function FourthPageSection() {
                 />
                 <button className="mt-4 md:mt-12 lg:mt-20 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none hover:opacity-90 transition-opacity cursor-pointer">
                   <span className="leading-none">RUBY.D</span>
-                  <span className="text-[12px] md:text-[13px] lg:text-[15px] font-quicksand font-bold text-black leading-none">coming soon!</span>
+                  <span className="text-[12px] md:text-[13px] lg:text-[15px] font-quicksand font-bold text-black leading-none">
+                    coming soon!
+                  </span>
                 </button>
               </div>
 
@@ -79,7 +100,9 @@ export default function FourthPageSection() {
                 />
                 <button className="mt-4 md:mt-12 lg:mt-20 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none hover:opacity-90 transition-opacity cursor-pointer">
                   <span className="leading-none">SFYR.D</span>
-                  <span className="text-[12px] md:text-[13px] lg:text-[15px] font-quicksand font-bold text-black leading-none">coming soon!</span>
+                  <span className="text-[12px] md:text-[13px] lg:text-[15px] font-quicksand font-bold text-black leading-none">
+                    coming soon!
+                  </span>
                 </button>
               </div>
             </div>

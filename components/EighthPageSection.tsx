@@ -5,15 +5,16 @@ import Image from "next/image";
 export default function EighthPageSection() {
   return (
     <div className="w-full min-h-[600px] md:min-h-[800px] lg:min-h-[1024px] relative overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/eigth-page/background-image-eigth.svg"
-          alt="Eighth Page Background"
-          fill
-          className="object-cover"
+        <video
+          src="/videos/eigth-page/drone to lake.mp4"
+          autoPlay
+          loop
+          muted
+          className="w-full h-full object-cover"
         />
-        {/* Dark overlay to dim the background image */}
+        {/* Dark overlay to dim the background video */}
         <div className="absolute inset-0 bg-black opacity-60 pointer-events-none" />
       </div>
       

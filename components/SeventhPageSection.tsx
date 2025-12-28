@@ -27,7 +27,7 @@ export default function SeventhPageSection() {
           <div className="flex flex-col items-center w-full lg:w-auto">
             {/* Row 1: Phone Image */}
             <Image
-              src="/images/sixth-page/phone-image.svg"
+              src="/gif/Email-stone.gif"
               alt="Phone"
               width={445}
               height={445}
