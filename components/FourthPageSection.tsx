@@ -20,15 +20,17 @@ export default function FourthPageSection() {
           </p>
         </div>
 
-        {/* Background Image with Overlay Content */}
+        {/* Background Video with Overlay Content */}
         <div className="w-full mt-4 md:mt-5 lg:mt-5 relative">
           <div className="relative w-full min-h-[1000px] md:min-h-[700px] lg:min-h-[765px]">
             <div className="absolute inset-0">
-              <Image
-                src="/images/fourth-page/background-image-fourth.svg"
-                alt="Fourth Page Background"
-                fill
-                className="object-cover"
+              <video
+                src="/videos/fourth-page/floating-gems.mov"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="object-cover w-full h-full opacity-30"
               />
             </div>
             
@@ -41,7 +43,7 @@ export default function FourthPageSection() {
                   alt="Emerald"
                   width={356}
                   height={347}
-                  className="object-contain w-full max-w-[250px] md:max-w-[300px] lg:w-[356px] h-auto"
+                  className="object-contain w-full max-w-62.5 md:max-w-75 lg:w-89 h-auto"
                 />
                 <a
                   href="https://aix-emrld-landingpage.vercel.app/"
@@ -58,7 +60,7 @@ export default function FourthPageSection() {
                   alt="Ruby"
                   width={356}
                   height={347}
-                  className="object-contain w-full max-w-[250px] md:max-w-[300px] lg:w-[356px] h-auto"
+                  className="object-contain w-full max-w-62.5 md:max-w-75 lg:w-89 h-auto"
                 />
                 <button className="mt-4 md:mt-12 lg:mt-20 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none hover:opacity-90 transition-opacity cursor-pointer">
                   <span className="leading-none">RUBY.D</span>
@@ -73,7 +75,7 @@ export default function FourthPageSection() {
                   alt="Sapphire"
                   width={356}
                   height={347}
-                  className="object-contain w-full max-w-[250px] md:max-w-[300px] lg:w-[356px] h-auto"
+                  className="object-contain w-full max-w-62.5 md:max-w-75 lg:w-89 h-auto"
                 />
                 <button className="mt-4 md:mt-12 lg:mt-20 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none hover:opacity-90 transition-opacity cursor-pointer">
                   <span className="leading-none">SFYR.D</span>
