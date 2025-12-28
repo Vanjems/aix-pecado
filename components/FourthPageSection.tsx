@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
+import { useRef } from "react";
 
 export default function FourthPageSection() {
-  const [isHovered, setIsHovered] = useState(false);
+  const emeraldVideoRef = useRef<HTMLVideoElement>(null);
+  const rubyVideoRef = useRef<HTMLVideoElement>(null);
+  const sapphireVideoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <div className="w-full min-h-[600px] md:min-h-[800px] lg:h-[1024px] bg-[#000000] relative overflow-hidden">
@@ -40,29 +41,30 @@ export default function FourthPageSection() {
             {/* Three Gemstone Images with Buttons - Absolutely positioned on top */}
             <div className="absolute inset-0 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 lg:gap-8 pt-8 md:pt-12 lg:pt-40 pb-8 md:pb-12 lg:pb-0">
               {/* Emerald Video */}
-              <div
-                className="flex flex-col items-center"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              >
-                <div className="w-[356px] h-[347px] rounded-lg border border-white overflow-hidden relative">
-                  {isHovered ? (
+              <div className="flex flex-col items-center">
+                {/* Container maintains 356x347px for layout with rounded corners */}
+                <div
+                  className="w-[356px] h-[347px] relative overflow-hidden rounded-2xl"
+                  onMouseEnter={() => {
+                    emeraldVideoRef.current?.play();
+                  }}
+                  onMouseLeave={() => {
+                    emeraldVideoRef.current?.pause();
+                  }}
+                >
+                  {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[712px] h-[694px]">
                     <video
+                      ref={emeraldVideoRef}
                       src="/videos/fourth-page/emerald.mp4"
-                      autoPlay
+                      loop
                       muted
                       playsInline
-                      className="absolute top-0 w-full h-full object-contain"
+                      className="absolute left-1/2 top-1/2 -translate-x-[calc(50%-3%)] -translate-y-[calc(50%-3%)] w-[512px] h-[494px] object-cover"
                     />
-                  ) : (
-                    <Image
-                      src="/images/fourth-page/emerald-image.svg"
-                      alt="Emerald"
-                      width={356}
-                      height={347}
-                      className="object-contain w-full h-full"
-                    />
-                  )}
+                  </div>
+                  {/* Border overlay matching visible area */}
+                  <div className="absolute inset-0 rounded-2xl border border-white pointer-events-none" />
                 </div>
                 <a
                   href="https://aix-emrld-landingpage.vercel.app/"
@@ -72,15 +74,32 @@ export default function FourthPageSection() {
                 </a>
               </div>
 
-              {/* Ruby Image */}
+              {/* Ruby Video */}
               <div className="flex flex-col items-center">
-                <Image
-                  src="/images/fourth-page/ruby-image.svg"
-                  alt="Ruby"
-                  width={356}
-                  height={347}
-                  className="object-contain w-full max-w-62.5 md:max-w-75 lg:w-89 h-auto"
-                />
+                {/* Container maintains 356x347px for layout with rounded corners */}
+                <div
+                  className="w-[356px] h-[347px] relative overflow-hidden rounded-2xl"
+                  onMouseEnter={() => {
+                    rubyVideoRef.current?.play();
+                  }}
+                  onMouseLeave={() => {
+                    rubyVideoRef.current?.pause();
+                  }}
+                >
+                  {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[812px] h-[694px]">
+                    <video
+                      ref={rubyVideoRef}
+                      src="/videos/fourth-page/ruby.mp4"
+                      loop
+                      muted
+                      playsInline
+                      className="absolute left-1/2 top-1/2 -translate-x-[calc(30%)] -translate-y-1/2 w-[612px] h-[494px] object-cover"
+                    />
+                  </div>
+                  {/* Border overlay matching visible area */}
+                  <div className="absolute inset-0 rounded-2xl border border-white pointer-events-none" />
+                </div>
                 <button className="mt-4 md:mt-12 lg:mt-20 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none hover:opacity-90 transition-opacity cursor-pointer">
                   <span className="leading-none">RUBY.D</span>
                   <span className="text-[12px] md:text-[13px] lg:text-[15px] font-quicksand font-bold text-black leading-none">
@@ -89,15 +108,32 @@ export default function FourthPageSection() {
                 </button>
               </div>
 
-              {/* Sapphire Image */}
+              {/* Sapphire Video */}
               <div className="flex flex-col items-center">
-                <Image
-                  src="/images/fourth-page/sapphire-image.svg"
-                  alt="Sapphire"
-                  width={356}
-                  height={347}
-                  className="object-contain w-full max-w-62.5 md:max-w-75 lg:w-89 h-auto"
-                />
+                {/* Container maintains 356x347px for layout with rounded corners */}
+                <div
+                  className="w-[356px] h-[347px] relative overflow-hidden rounded-2xl"
+                  onMouseEnter={() => {
+                    sapphireVideoRef.current?.play();
+                  }}
+                  onMouseLeave={() => {
+                    sapphireVideoRef.current?.pause();
+                  }}
+                >
+                  {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[712px] h-[694px]">
+                    <video
+                      ref={sapphireVideoRef}
+                      src="/videos/fourth-page/Sapphire.mp4"
+                      loop
+                      muted
+                      playsInline
+                      className="absolute left-1/2 top-1/2 -translate-x-[calc(65%)] -translate-y-1/2 w-[512px] h-[494px] object-cover"
+                    />
+                  </div>
+                  {/* Border overlay matching visible area */}
+                  <div className="absolute inset-0 rounded-2xl border border-white pointer-events-none" />
+                </div>
                 <button className="mt-4 md:mt-12 lg:mt-20 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center gap-0 leading-none hover:opacity-90 transition-opacity cursor-pointer">
                   <span className="leading-none">SFYR.D</span>
                   <span className="text-[12px] md:text-[13px] lg:text-[15px] font-quicksand font-bold text-black leading-none">
