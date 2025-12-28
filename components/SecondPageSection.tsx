@@ -32,6 +32,7 @@ export default function SecondPageSection() {
             autoPlay
             loop
             muted
+            preload="metadata"
             className="object-contain max-w-1500 max-h-840"
           />
         </div>

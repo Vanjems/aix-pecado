@@ -12,6 +12,7 @@ export default function EighthPageSection() {
           autoPlay
           loop
           muted
+          preload="metadata"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay to dim the background video */}

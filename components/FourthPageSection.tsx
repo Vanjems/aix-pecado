@@ -1,14 +1,40 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function FourthPageSection() {
   const emeraldVideoRef = useRef<HTMLVideoElement>(null);
   const rubyVideoRef = useRef<HTMLVideoElement>(null);
   const sapphireVideoRef = useRef<HTMLVideoElement>(null);
+  const [sectionVisible, setSectionVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Load videos when section is visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setSectionVisible(true);
+          }
+        });
+      },
+      { rootMargin: "200px" } // Start loading 200px before visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <div className="w-full min-h-[600px] md:min-h-[800px] lg:h-[1024px] bg-[#000000] relative overflow-hidden">
+    <div ref={sectionRef} className="w-full min-h-[600px] md:min-h-[800px] lg:h-[1024px] bg-[#000000] relative overflow-hidden">
       {/* Film grain texture overlay */}
       <div className="film-grain-overlay" />
 
@@ -34,6 +60,7 @@ export default function FourthPageSection() {
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 className="object-cover w-full h-full opacity-30"
               />
             </div>
@@ -46,7 +73,9 @@ export default function FourthPageSection() {
                 <div
                   className="w-[356px] h-[347px] relative overflow-hidden rounded-2xl"
                   onMouseEnter={() => {
-                    emeraldVideoRef.current?.play();
+                    if (sectionVisible && emeraldVideoRef.current) {
+                      emeraldVideoRef.current.play();
+                    }
                   }}
                   onMouseLeave={() => {
                     emeraldVideoRef.current?.pause();
@@ -54,14 +83,17 @@ export default function FourthPageSection() {
                 >
                   {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[712px] h-[694px]">
-                    <video
-                      ref={emeraldVideoRef}
-                      src="/videos/fourth-page/emerald.mp4"
-                      loop
-                      muted
-                      playsInline
-                      className="absolute left-1/2 top-1/2 -translate-x-[calc(50%-3%)] -translate-y-[calc(50%-3%)] w-[512px] h-[494px] object-cover"
-                    />
+                    {sectionVisible && (
+                      <video
+                        ref={emeraldVideoRef}
+                        src="/videos/fourth-page/emerald.mp4"
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        className="absolute left-1/2 top-1/2 -translate-x-[calc(50%-3%)] -translate-y-[calc(50%-3%)] w-[512px] h-[494px] object-cover"
+                      />
+                    )}
                   </div>
                   {/* Border overlay matching visible area */}
                   <div className="absolute inset-0 rounded-2xl border border-white pointer-events-none" />
@@ -80,7 +112,9 @@ export default function FourthPageSection() {
                 <div
                   className="w-[356px] h-[347px] relative overflow-hidden rounded-2xl"
                   onMouseEnter={() => {
-                    rubyVideoRef.current?.play();
+                    if (sectionVisible && rubyVideoRef.current) {
+                      rubyVideoRef.current.play();
+                    }
                   }}
                   onMouseLeave={() => {
                     rubyVideoRef.current?.pause();
@@ -88,14 +122,17 @@ export default function FourthPageSection() {
                 >
                   {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[812px] h-[694px]">
-                    <video
-                      ref={rubyVideoRef}
-                      src="/videos/fourth-page/ruby.mp4"
-                      loop
-                      muted
-                      playsInline
-                      className="absolute left-1/2 top-1/2 -translate-x-[calc(30%)] -translate-y-1/2 w-[612px] h-[494px] object-cover"
-                    />
+                    {sectionVisible && (
+                      <video
+                        ref={rubyVideoRef}
+                        src="/videos/fourth-page/ruby.mp4"
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        className="absolute left-1/2 top-1/2 -translate-x-[calc(30%)] -translate-y-1/2 w-[612px] h-[494px] object-cover"
+                      />
+                    )}
                   </div>
                   {/* Border overlay matching visible area */}
                   <div className="absolute inset-0 rounded-2xl border border-white pointer-events-none" />
@@ -114,7 +151,9 @@ export default function FourthPageSection() {
                 <div
                   className="w-[356px] h-[347px] relative overflow-hidden rounded-2xl"
                   onMouseEnter={() => {
-                    sapphireVideoRef.current?.play();
+                    if (sectionVisible && sapphireVideoRef.current) {
+                      sapphireVideoRef.current.play();
+                    }
                   }}
                   onMouseLeave={() => {
                     sapphireVideoRef.current?.pause();
@@ -122,14 +161,17 @@ export default function FourthPageSection() {
                 >
                   {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[712px] h-[694px]">
-                    <video
-                      ref={sapphireVideoRef}
-                      src="/videos/fourth-page/Sapphire.mp4"
-                      loop
-                      muted
-                      playsInline
-                      className="absolute left-1/2 top-1/2 -translate-x-[calc(65%)] -translate-y-1/2 w-[512px] h-[494px] object-cover"
-                    />
+                    {sectionVisible && (
+                      <video
+                        ref={sapphireVideoRef}
+                        src="/videos/fourth-page/Sapphire.mp4"
+                        loop
+                        muted
+                        playsInline
+                        preload="none"
+                        className="absolute left-1/2 top-1/2 -translate-x-[calc(65%)] -translate-y-1/2 w-[512px] h-[494px] object-cover"
+                      />
+                    )}
                   </div>
                   {/* Border overlay matching visible area */}
                   <div className="absolute inset-0 rounded-2xl border border-white pointer-events-none" />

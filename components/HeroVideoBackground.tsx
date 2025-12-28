@@ -110,8 +110,8 @@ export default function HeroVideoBackground() {
 
   return (
     <div className="video-bg" aria-hidden>
-      <video ref={v1Ref} src="/videos/drone-to-top.mp4" preload="auto" />
-      <video ref={v2Ref} src="/videos/zoom-to-lake.mp4" preload="auto" />
+      <video ref={v1Ref} src="/videos/drone-to-top.mp4" preload="metadata" />
+      <video ref={v2Ref} src="/videos/zoom-to-lake.mp4" preload="metadata" />
     </div>
   );
 }

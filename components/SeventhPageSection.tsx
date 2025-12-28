@@ -31,6 +31,7 @@ export default function SeventhPageSection() {
               alt="Phone"
               width={445}
               height={445}
+              loading="lazy"
               className="object-contain w-full max-w-[300px] md:max-w-[350px] lg:w-[445px] h-auto"
             />
 
@@ -50,6 +51,7 @@ export default function SeventhPageSection() {
                   alt="Facebook"
                   width={50}
                   height={50}
+                  loading="lazy"
                   className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
                 />
                 <Image
@@ -57,6 +59,7 @@ export default function SeventhPageSection() {
                   alt="Twitter/X"
                   width={50}
                   height={50}
+                  loading="lazy"
                   className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
                 />
                 <Image
@@ -64,6 +67,7 @@ export default function SeventhPageSection() {
                   alt="Instagram"
                   width={50}
                   height={50}
+                  loading="lazy"
                   className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
                 />
                 <Image
@@ -71,6 +75,7 @@ export default function SeventhPageSection() {
                   alt="LinkedIn"
                   width={50}
                   height={50}
+                  loading="lazy"
                   className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
                 />
               </div>
@@ -89,6 +94,7 @@ export default function SeventhPageSection() {
                   alt="Email"
                   width={25}
                   height={25}
+                  loading="lazy"
                   className="object-contain w-[20px] md:w-[22px] lg:w-[25px] h-auto"
                 />
                 <p className="text-[16px] md:text-[18px] lg:text-[20px] font-quicksand font-semibold text-white">
@@ -103,6 +109,7 @@ export default function SeventhPageSection() {
                   alt="Phone"
                   width={25}
                   height={25}
+                  loading="lazy"
                   className="object-contain w-[20px] md:w-[22px] lg:w-[25px] h-auto"
                 />
                 <p className="text-[16px] md:text-[18px] lg:text-[20px] font-quicksand font-semibold text-white">

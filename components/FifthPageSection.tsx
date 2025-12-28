@@ -29,6 +29,7 @@ export default function FifthPageSection() {
               alt="PECAT"
               width={356}
               height={347}
+              loading="lazy"
               className="object-contain w-full max-w-[250px] md:max-w-[300px] lg:w-[356px] h-auto"
             />
             <button className="mt-8 md:mt-12 lg:mt-40 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center hover:opacity-90 transition-opacity cursor-pointer">
@@ -43,6 +44,7 @@ export default function FifthPageSection() {
               alt="RLINK"
               width={356}
               height={347}
+              loading="lazy"
               className="object-contain w-full max-w-[250px] md:max-w-[300px] lg:w-[356px] h-auto"
             />
             <button className="mt-8 md:mt-12 lg:mt-40 px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full bg-white font-quicksand text-[20px] md:text-[26px] lg:text-[32px] font-bold text-black flex flex-col items-center hover:opacity-90 transition-opacity cursor-pointer">

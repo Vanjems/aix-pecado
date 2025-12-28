@@ -37,6 +37,7 @@ export default function ThirdPageSection() {
                 alt="First Box Content"
                 width={444}
                 height={462}
+                loading="lazy"
                 className="object-contain w-full max-w-[300px] md:max-w-[350px] lg:w-[444px] h-auto"
               />
             </div>
@@ -56,6 +57,7 @@ export default function ThirdPageSection() {
                 alt="Second Box Content"
                 width={458}
                 height={460}
+                loading="lazy"
                 className="object-contain w-full max-w-[300px] md:max-w-[350px] lg:w-[458px] h-auto"
               />
             </div>

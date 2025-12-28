@@ -20,6 +20,7 @@ export default function Footer() {
                 alt="Logo"
                 width={200}
                 height={60}
+                loading="lazy"
                 className="h-auto w-[150px] md:w-[175px] lg:w-[200px]"
               />
             </div>
@@ -42,6 +43,7 @@ export default function Footer() {
                 alt="Facebook"
                 width={50}
                 height={50}
+                loading="lazy"
                 className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
               />
               <Image
@@ -49,6 +51,7 @@ export default function Footer() {
                 alt="Twitter/X"
                 width={50}
                 height={50}
+                loading="lazy"
                 className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
               />
               <Image
@@ -56,6 +59,7 @@ export default function Footer() {
                 alt="Instagram"
                 width={50}
                 height={50}
+                loading="lazy"
                 className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
               />
               <Image
@@ -63,6 +67,7 @@ export default function Footer() {
                 alt="LinkedIn"
                 width={50}
                 height={50}
+                loading="lazy"
                 className="object-contain w-[40px] md:w-[45px] lg:w-[50px] h-auto"
               />
             </div>
