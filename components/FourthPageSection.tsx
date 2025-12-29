@@ -8,6 +8,24 @@ export default function FourthPageSection() {
   const sapphireVideoRef = useRef<HTMLVideoElement>(null);
   const [sectionVisible, setSectionVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  
+  // State for thumbnail images (first frame of videos)
+  const [emeraldThumbnail, setEmeraldThumbnail] = useState<string | null>(null);
+  const [rubyThumbnail, setRubyThumbnail] = useState<string | null>(null);
+  const [sapphireThumbnail, setSapphireThumbnail] = useState<string | null>(null);
+
+  // Function to capture first frame from video
+  const captureFirstFrame = (video: HTMLVideoElement, setThumbnail: (url: string) => void) => {
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const dataUrl = canvas.toDataURL('image/jpeg');
+      setThumbnail(dataUrl);
+    }
+  };
 
   // Load videos when section is visible
   useEffect(() => {
@@ -32,6 +50,61 @@ export default function FourthPageSection() {
       }
     };
   }, []);
+
+  // Capture thumbnails when videos are loaded
+  useEffect(() => {
+    if (sectionVisible) {
+      // Create hidden video elements to load and capture first frame
+      const emeraldVideo = document.createElement('video');
+      const rubyVideo = document.createElement('video');
+      const sapphireVideo = document.createElement('video');
+
+      emeraldVideo.src = '/videos/fourth-page/emerald.mp4';
+      rubyVideo.src = '/videos/fourth-page/ruby.mp4';
+      sapphireVideo.src = '/videos/fourth-page/Sapphire.mp4';
+
+      emeraldVideo.preload = 'metadata';
+      rubyVideo.preload = 'metadata';
+      sapphireVideo.preload = 'metadata';
+      emeraldVideo.muted = true;
+      rubyVideo.muted = true;
+      sapphireVideo.muted = true;
+
+      emeraldVideo.addEventListener('loadedmetadata', () => {
+        emeraldVideo.currentTime = 0.1; // Seek to first frame
+      });
+      emeraldVideo.addEventListener('seeked', () => {
+        captureFirstFrame(emeraldVideo, setEmeraldThumbnail);
+      });
+
+      rubyVideo.addEventListener('loadedmetadata', () => {
+        rubyVideo.currentTime = 0.1;
+      });
+      rubyVideo.addEventListener('seeked', () => {
+        captureFirstFrame(rubyVideo, setRubyThumbnail);
+      });
+
+      sapphireVideo.addEventListener('loadedmetadata', () => {
+        sapphireVideo.currentTime = 0.1;
+      });
+      sapphireVideo.addEventListener('seeked', () => {
+        captureFirstFrame(sapphireVideo, setSapphireThumbnail);
+      });
+
+      emeraldVideo.load();
+      rubyVideo.load();
+      sapphireVideo.load();
+
+      return () => {
+        emeraldVideo.removeEventListener('loadedmetadata', () => {});
+        emeraldVideo.removeEventListener('seeked', () => {});
+        rubyVideo.removeEventListener('loadedmetadata', () => {});
+        rubyVideo.removeEventListener('seeked', () => {});
+        sapphireVideo.removeEventListener('loadedmetadata', () => {});
+        sapphireVideo.removeEventListener('seeked', () => {});
+      };
+    }
+  }, [sectionVisible]);
 
   return (
     <div ref={sectionRef} className="w-full min-h-[600px] md:min-h-[800px] lg:h-[1024px] bg-[#000000] relative overflow-hidden">
@@ -81,6 +154,13 @@ export default function FourthPageSection() {
                     emeraldVideoRef.current?.pause();
                   }}
                 >
+                  {/* Thumbnail background - shows first frame */}
+                  {emeraldThumbnail && (
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${emeraldThumbnail})` }}
+                    />
+                  )}
                   {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[712px] h-[694px]">
                     {sectionVisible && (
@@ -120,6 +200,13 @@ export default function FourthPageSection() {
                     rubyVideoRef.current?.pause();
                   }}
                 >
+                  {/* Thumbnail background - shows first frame */}
+                  {rubyThumbnail && (
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${rubyThumbnail})` }}
+                    />
+                  )}
                   {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[812px] h-[694px]">
                     {sectionVisible && (
@@ -159,6 +246,13 @@ export default function FourthPageSection() {
                     sapphireVideoRef.current?.pause();
                   }}
                 >
+                  {/* Thumbnail background - shows first frame */}
+                  {sapphireThumbnail && (
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${sapphireThumbnail})` }}
+                    />
+                  )}
                   {/* Larger video container - extends beyond but clipped by parent with rounded corners */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[712px] h-[694px]">
                     {sectionVisible && (

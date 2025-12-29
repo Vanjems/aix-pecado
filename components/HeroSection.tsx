@@ -3,7 +3,7 @@ import HeroVideoBackground from "@/components/HeroVideoBackground";
 
 export default function HeroSection() {
   return (
-    <main id="hero" className="relative w-full min-h-screen flex justify-center overflow-hidden pt-16 md:pt-20 lg:pt-25">
+    <main id="hero" className="relative w-full min-h-[calc(100vh-200px)] flex justify-center overflow-hidden pt-16 md:pt-20 lg:pt-25">
       {/* Background: synchronized crossfade (client component) */}
       <HeroVideoBackground />
 

@@ -1,8 +1,42 @@
 "use client";
 
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function ThirdPageSection() {
+  // State for first section image cycling
+  const [firstImageIndex, setFirstImageIndex] = useState(0);
+  const firstImages = [
+    "/images/third-page/first-section/1.jpg",
+    "/images/third-page/first-section/2.jpg",
+    "/images/third-page/first-section/3.jpg",
+  ];
+
+  // State for second section image cycling
+  const [secondImageIndex, setSecondImageIndex] = useState(0);
+  const secondImages = [
+    "/images/third-page/second-section/1.jpg",
+    "/images/third-page/second-section/2.jpg",
+    "/images/third-page/second-section/3.jpg",
+  ];
+
+  // Cycle first section images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFirstImageIndex((prev) => (prev + 1) % firstImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [firstImages.length]);
+
+  // Cycle second section images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSecondImageIndex((prev) => (prev + 1) % secondImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [secondImages.length]);
   return (
     <div id="third-page" className="w-full min-h-[800px] md:min-h-[1000px] lg:h-[1350px] bg-[#FDFBF9] flex flex-col items-center justify-center relative py-8 md:py-10 lg:py-0">
       <div className="flex flex-col items-center gap-4 md:gap-6 lg:gap-8 w-full px-4">
@@ -32,14 +66,16 @@ export default function ThirdPageSection() {
             </div>
             {/* Second Column - Image */}
             <div className="flex-1 flex items-center justify-center py-4 md:py-0">
-              <Image
-                src="/images/third-page/first-box-content.svg"
-                alt="First Box Content"
-                width={444}
-                height={462}
-                loading="lazy"
-                className="object-contain w-full max-w-[300px] md:max-w-[350px] lg:w-[444px] h-auto"
-              />
+              <div className="w-[300px] h-[312px] md:w-[350px] md:h-[364px] lg:w-[444px] lg:h-[462px] overflow-hidden relative">
+                <Image
+                  src={firstImages[firstImageIndex]}
+                  alt="First Box Content"
+                  width={444}
+                  height={462}
+                  loading="lazy"
+                  className="object-cover w-full h-full object-center transition-opacity duration-500"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -52,14 +88,16 @@ export default function ThirdPageSection() {
           <div className="relative z-10 flex flex-col md:flex-row h-full p-3 md:p-4 lg:p-5">
             {/* First Column - Image */}
             <div className="flex-1 flex items-center justify-center py-4 md:py-0 order-2 md:order-1">
-              <Image
-                src="/images/third-page/second-box-content.svg"
-                alt="Second Box Content"
-                width={458}
-                height={460}
-                loading="lazy"
-                className="object-contain w-full max-w-[300px] md:max-w-[350px] lg:w-[458px] h-auto"
-              />
+              <div className="w-[300px] h-[312px] md:w-[350px] md:h-[364px] lg:w-[444px] lg:h-[462px] overflow-hidden relative">
+                <Image
+                  src={secondImages[secondImageIndex]}
+                  alt="Second Box Content"
+                  width={444}
+                  height={462}
+                  loading="lazy"
+                  className="object-cover w-full h-full object-center transition-opacity duration-500"
+                />
+              </div>
             </div>
             {/* Second Column - Text Content */}
             <div className="flex-1 flex items-center justify-center pr-4 md:pr-5 lg:pr-6 pl-4 md:pl-5 lg:pl-8 py-4 md:py-0 order-1 md:order-2">
